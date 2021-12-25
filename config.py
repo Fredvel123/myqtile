@@ -167,7 +167,7 @@ screens = [
                   padding=10
                 ),
                 widget.Prompt(),
-                #widget.WindowName(),
+                widget.WindowName(),
                 widget.Chord(
                     chords_colors={
                         'launch': ("#ff0000", "#ffffff"),
