@@ -97,7 +97,7 @@ __groups = {
     1: Group("DEVELOPMENT"),
     2: Group("NAVEGATION"),
     3: Group("TERMINAL"),
-    0: Group("CONFIG"),
+    4: Group("CONFIG"),
 }
 groups = [__groups[i] for i in __groups]
 
