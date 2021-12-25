@@ -151,23 +151,32 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
+# colors = {
+#   dark_blue: "#1c1c33",
+#   light: "#ffffff",
+#   "gray": "#bbbbbb"
+# }
+
 screens = [
     Screen(
         top=bar.Bar(
             [
                 #widget.CurrentLayout(),
                 widget.GroupBox(
-                  highlight_color="#dd6633",
+                  highlight_color="#3d3f55",
                   highlight_method="line",
                   spacing=0,
-                  inactive="#ffaa77",
-                  active="#dd6633",
+                  inactive= "#bbbbbb",
+                  active="#ffffff",
                   block_highlight_text_color="#ffffff",
                   borderwidth=0,
                   padding=10
                 ),
                 widget.Prompt(),
-                widget.WindowName(),
+                widget.WindowName(
+                  foreground="#ff3bbe",
+                  fontsize= 15,
+                ),
                 widget.Chord(
                     chords_colors={
                         'launch': ("#ff0000", "#ffffff"),
@@ -181,55 +190,13 @@ screens = [
                 widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
                 #widget.QuickExit(),
             ],
-            24,
-            background="#222222",
+            30,
+            background="#1c1c33",
             opacity=1
         ),
     ),
 ]
 
-
-# screens = [
-#     Screen(
-#         top=bar.Bar(
-#             [
-#                 # widget.CurrentLayout(),
-#                 widget.GroupBox(
-#                     highlight_color=[color],
-#                     highlight_method="line",
-#                     spacing=0,
-#                     inactive=color_light2,
-#                     active=color,
-#                     block_highlight_text_color="#ffffff",
-#                     borderwidth=0,
-#                     padding=10
-#                 ),
-#                 widget.Prompt(),
-#                 widget.WindowName(foreground="#999999"),
-#                 widget.CheckUpdates(
-#                     custom_command="checkupdates",
-#                     background="555555",
-#                     update_interval=1800,
-#                     colour_have_updates="00ff00",
-#                     colour_no_updates="ff5500",
-#                     display_format='Actualitzacions: {updates}',
-#                     padding=10,
-#                     execute="lxterminal -e sudo pacman -Syyu",
-#                 ),
-#                 widget.Clock(format='%Y-%m-%d %a %I:%M %p', padding=10),
-#                 widget.Systray(),
-#                 widget.QuickExit(
-#                     default_text="Salir",
-#                     foreground=color_light,
-#                     countdown_format="[ {} ]"
-#                 ),
-#             ],
-#             34,
-#             background="#222222",
-#             opacity=1
-#         ),
-#     ),
-# ]
 
 
 # Drag floating layouts.
