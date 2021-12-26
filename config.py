@@ -82,6 +82,17 @@ keys = [
     # firefox
     Key([mod], "f", lazy.spawn("firefox"), desc="to open firefox"),
 
+    # Volume
+    Key([mod], "d", lazy.spawn(
+      "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+    )),
+    Key([mod], "u", lazy.spawn(
+      "pactl set-sink-volume @DEFAULT_SINK@ +5%"
+    )),
+    Key([mod, "shift"], "m", lazy.spawn(
+      "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    )),
+
     # rofi / to managment programs
     Key([mod], "m", lazy.spawn("rofi -show run"), desc="to open rofi"),
 
@@ -247,7 +258,10 @@ autostart = [
 #    "setxkbmap es",
     "feh --bg-scale .config/qtile/wallpaper/arch.webp",
     "picom --no-vsync &",
-#    "nm-applet &",
+    "udiskie -t &",
+    "nm-applet &",
+    #"volumeicon &",
+    #"cbatticon &",
 ]
 
 for x in autostart:
